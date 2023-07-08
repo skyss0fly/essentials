@@ -12,8 +12,13 @@ public function onCommand(CommandSender $sender, Command $command, string $label
         }
         switch ($command->getName()) {
             case "home":
+               if (count($args) === 0) {
                 $sender->sendMessage("Usage: /home homename");
                 return true;
+            }
+
+           $home = $args[0];
+           
           
             default:
                 throw new \AssertionError("This line will never be executed");
